@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>Twittler</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <script src="twittler.js"></script>
   </head>
   <body>
-    <script>
+    <header>
+      <h1 class="logo">
+        Twittler
+      </h1>
+    </header>
+    <section class="container options">
+      <select class="user">
+        <option value="allUsers" selected>All Users</option>
+        <option value="shawndrost">@shawndrost</option>
+        <option value="sharksforcheap">@sharksforcheap</option>
+        <option value="mracus">@mracus</option>
+        <option value="douglascalhoun">@douglascalhoun</option>
+      </select>
+    </section>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <section class="container">
+      <div class="filter"></div>
+      <div class="selection"></div>
+      <div class="tweets"></div>
+    </section>
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
+    <section class="container">
+      <button class='load'>
+        Load more tweets
+      </button>
+    </section>
+    <footer>
 
-      });
-
-    </script>
+    </footer>
   </body>
 </html>
